@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+    "ms-python.isort",
+    "ms-python.flake8",
+    "charliermarsh.ruff",
+    "ms-vscode.test-adapter-converter",
+    "hbenl.vscode-test-explorer",
+    "njpwerner.autodocstring",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "bungcip.better-toml"
+  ]
+}

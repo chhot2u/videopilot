@@ -1,0 +1,1 @@
+"""VideoPilot — Manipulation modules."""

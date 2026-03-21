@@ -1,0 +1,108 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "VideoPilot: Install Dependencies",
+      "type": "shell",
+      "command": "pip install -e .[all]",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "VideoPilot: Run CLI",
+      "type": "shell",
+      "command": "python -m core.cli",
+      "args": [
+        "--list-modules"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "VideoPilot: Run Tests",
+      "type": "shell",
+      "command": "python -m pytest",
+      "args": [
+        "tests/",
+        "-v"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "VideoPilot: Run Tests with Coverage",
+      "type": "shell",
+      "command": "python -m pytest",
+      "args": [
+        "tests/",
+        "-v",
+        "--cov=core",
+        "--cov=modules",
+        "--cov-report=html"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "VideoPilot: Run API",
+      "type": "shell",
+      "command": "python -m api.main",
+      "group": "run",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "VideoPilot: Format Code",
+      "type": "shell",
+      "command": "python -m ruff format",
+      "args": [
+        "core/",
+        "modules/",
+        "api/",
+        "tests/"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "VideoPilot: Lint Code",
+      "type": "shell",
+      "command": "python -m ruff check",
+      "args": [
+        "core/",
+        "modules/",
+        "api/",
+        "tests/"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

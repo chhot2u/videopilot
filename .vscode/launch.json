@@ -1,0 +1,116 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "VideoPilot: List Modules",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/core/cli.py",
+      "console": "integratedTerminal",
+      "args": ["--list-modules"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "VideoPilot: Debug API",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/api/main.py",
+      "console": "integratedTerminal",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "VideoPilot: Debug Module",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/core/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--run", "color_grading",
+        "--input", "${workspaceFolder}/tests/fixtures/test_video.mp4",
+        "--output", "${workspaceFolder}/output/test_video_graded.mp4"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "VideoPilot: Debug Pipeline",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/core/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--pipeline", "color_grading,auto_subtitles",
+        "--input", "${workspaceFolder}/tests/fixtures/test_video.mp4",
+        "--output", "${workspaceFolder}/output/test_video_processed.mp4"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "VideoPilot: Run All Tests",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "args": [
+        "tests/",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "VideoPilot: Run Tests with Coverage",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "args": [
+        "tests/",
+        "-v",
+        "--cov=core",
+        "--cov=modules",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "VideoPilot: Debug Specific Test",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "args": [
+        "${file}",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": false
+    }
+  ]
+}
