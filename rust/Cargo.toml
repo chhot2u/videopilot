@@ -1,0 +1,17 @@
+[package]
+name = "videopilot-core"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "videopilot_core"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+pyo3 = { version = "0.23.5", features = ["extension-module", "full"] }
+numpy = "0.23.0"
+thiserror = "1.0.61"
+anyhow = "1.0.89"
+ffmpeg-next = "6.1.1"
+image = "0.25.1"
+tokio = { version = "1.40.0", features = ["full"] }
